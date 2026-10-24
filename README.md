@@ -32,9 +32,10 @@
 
 ## Fonctionnalités
 
-- **Ouverture des fichiers models.bin** de Minecraft PS3 par *Fichier > Ouvrir…*, ou en déposant le fichier sur
-  `Spark Model Editor.exe` (*Ouvrir avec* fonctionne aussi). Un fichier qui n’est pas un models.bin lisible est refusé
-  avec un message, sans être modifié.
+- **Ouverture des fichiers models.bin** de Minecraft PS3 par *Fichier > Ouvrir…*, ou par un clic droit sur le fichier,
+  *Ouvrir avec Spark Model Editor*. Cette commande n’apparaît que sur les fichiers nommés `models.bin` : les autres
+  fichiers `.bin` ne changent pas. Un fichier qui n’est pas un models.bin lisible est refusé avec un message, sans être
+  modifié.
 - **Arbre des modèles** : le fichier, ses modèles (avec la tête du mob correspondant), leurs parties et leurs boîtes.
   *Outils > Tout développer* et *Tout réduire* ouvrent ou replient tout l’arbre.
 - **Inspecteur** de l’élément choisi, à droite :
@@ -68,8 +69,9 @@ l’exécutable.
 
 ## Utilisation
 
-1. **Ouvrir** : *Fichier > Ouvrir…* (`Ctrl+O`), puis choisissez le `models.bin`. Travaillez de préférence sur une copie
-   tirée de la backup : la copie `.bak` n’est faite qu’une fois.
+1. **Ouvrir** : *Fichier > Ouvrir…* (`Ctrl+O`), puis choisissez le `models.bin`, ou faites un clic droit sur le
+   fichier, *Ouvrir avec Spark Model Editor* (sous Windows 11, dans *Afficher plus d’options*). Travaillez de préférence
+   sur une copie tirée de la backup : la copie `.bak` n’est faite qu’une fois.
 2. **Choisir un élément** dans l’arbre : un modèle (par exemple `ocelot`), une de ses parties (`head`, `body`…) ou une
    de ses boîtes (`Box 1`…).
 3. **Modifier** les valeurs dans l’inspecteur : `Entrée` valide la saisie, les flèches et la molette avancent pas à
@@ -114,7 +116,8 @@ entiers.
 | Un modèle s’affiche mal dans le jeu | Remettez la copie `models.bin.bak` (renommée en `models.bin`), puis refaites les changements un par un. |
 | « Le fichier a été écrit mais n’a pas pu être relu » | Ne l’utilisez pas dans le jeu : remettez la copie `.bak` et réessayez. |
 | L’enregistrement échoue | Le dossier est peut-être en lecture seule ou le fichier ouvert ailleurs : *Enregistrer sous* dans un autre dossier. |
-| Le double-clic n’ouvre pas les `.bin` | L’extension `.bin` sert à beaucoup d’autres fichiers : passez par *Fichier > Ouvrir…*, ou clic droit, *Ouvrir avec*, puis Spark Model Editor. |
+| Le double-clic sur `models.bin` n’ouvre pas Spark Model Editor | C’est voulu : Windows associe une extension, pas un nom de fichier, et `.bin` sert à beaucoup d’autres fichiers. Faites un clic droit, *Ouvrir avec Spark Model Editor*. |
+| La commande *Ouvrir avec Spark Model Editor* n’apparaît pas | Lancez l’application une fois : c’est elle qui ajoute la commande. Le fichier doit s’appeler `models.bin`. Sous Windows 11, ouvrez *Afficher plus d’options*. |
 
 Une question ? Rejoignez le [serveur Discord](https://discord.gg/TbFYvqsh5z).
 
@@ -125,9 +128,10 @@ Supprimez le dossier de l’application. Elle garde aussi, pour votre compte Win
 | Emplacement | Contenu |
 |---|---|
 | `HKEY_CURRENT_USER\Software\SparkModelEditor` | Réglages (langue, dossier et fichiers récents, activité Discord…). |
+| `HKEY_CURRENT_USER\Software\Classes\SystemFileAssociations\.bin\shell\SparkModelEditor` | Commande *Ouvrir avec Spark Model Editor* du clic droit sur `models.bin`. |
 | `%LocalAppData%\Spark Model Editor` | Journal des mises à jour. |
 
-Vous pouvez supprimer cette clé et ce dossier.
+Vous pouvez supprimer ces clés et ce dossier.
 
 ## Crédits
 
@@ -157,7 +161,8 @@ interface is in French; English texts are included: set the string value `Langua
 
 **Requirements**: Windows 10 or 11 (64-bit) PC, nothing else to install (the .NET runtime is included).
 
-**Features**: open a models.bin from *File > Open* (`Ctrl+O`) or by dropping it on `Spark Model Editor.exe` ·
+**Features**: open a models.bin from *File > Open* (`Ctrl+O`) or by right-clicking it, *Open with Spark Model Editor*
+(shown on files named `models.bin` only; other `.bin` files are left alone) ·
 tree of the models (with their mob head), parts and boxes, expand or collapse all · inspector for the selected item:
 texture width and height (model); translation, texture offset and rotation (part); position, size, UV and scale
 (box) · type a value and press `Enter`, or step it with the field arrows, `Up`/`Down` or the mouse wheel · faithful
@@ -171,8 +176,9 @@ updater), extract it to get the **`SparkModelEditor-win-x64`** folder and run **
 executable is not Authenticode-signed, so Windows SmartScreen may show "Windows protected your PC": click **More
 info**, then **Run anyway**.
 
-**Uninstall**: delete the app folder. Settings are in `HKEY_CURRENT_USER\Software\SparkModelEditor`, the update log
-in `%LocalAppData%\Spark Model Editor`.
+**Uninstall**: delete the app folder. Settings are in `HKEY_CURRENT_USER\Software\SparkModelEditor`, the right-click
+command in `HKEY_CURRENT_USER\Software\Classes\SystemFileAssociations\.bin\shell\SparkModelEditor`, the update log in
+`%LocalAppData%\Spark Model Editor`.
 
 Unofficial project, not affiliated with Mojang, Microsoft, 4J Studios or Sony.
 
