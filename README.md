@@ -36,20 +36,27 @@
   *Ouvrir avec Spark Model Editor*. Cette commande n’apparaît que sur les fichiers nommés `models.bin` : les autres
   fichiers `.bin` ne changent pas. Un fichier qui n’est pas un models.bin lisible est refusé avec un message, sans être
   modifié.
+  
 - **Arbre des modèles** : le fichier, ses modèles (avec la tête du mob correspondant), leurs parties et leurs boîtes.
   *Outils > Tout développer* et *Tout réduire* ouvrent ou replient tout l’arbre.
+  
 - **Inspecteur** de l’élément choisi, à droite :
   - **modèle** : largeur et hauteur de la texture ;
   - **partie** : position (translation X, Y, Z), décalage de texture (X, Y) et rotation (X, Y, Z) ;
   - **boîte** : position, dimensions (longueur, hauteur, largeur), coordonnées de texture (UV) et échelle.
+
 - **Saisie rapide** : tapez une valeur puis `Entrée`, ou faites-la varier avec les petites flèches du champ, les
   touches `Haut` et `Bas` ou la molette (par pas de 1, de 0,1 pour l’échelle).
+
 - **Enregistrement fidèle** : seules les valeurs modifiées changent. Le reste du fichier (noms, ordre des modèles,
   octets réservés) est réécrit à l’identique.
+
 - **Enregistrement sûr** : une copie de l’original (`.bak`) est gardée au premier enregistrement par-dessus, puis le
   fichier écrit est relu pour vérifier qu’il est lisible. Un fichier modifié est signalé dans la ligne d’état
   (« Non enregistré »), et l’application propose de l’enregistrer avant de le fermer.
+
 - **À propos** (`F1`) : version, recherche des mises à jour, notes de chaque version et licences.
+
 - **Mises à jour automatiques** et **présence Discord**.
 
 ## Installation
@@ -57,9 +64,11 @@
 1. Ouvrez la [dernière version](https://github.com/INF3CONxR7/Spark_Model_Editor/releases/latest) et téléchargez
    **`SparkModelEditor-win-x64.zip`** (le fichier `.zip.sig` sert au programme de mise à jour : inutile de le
    télécharger).
-2. Extrayez l’archive à l’endroit de votre choix, par exemple dans Documents ou sur le Bureau : vous obtenez le dossier
+   
+3. Extrayez l’archive à l’endroit de votre choix, par exemple dans Documents ou sur le Bureau : vous obtenez le dossier
    **`SparkModelEditor-win-x64`**. Gardez ensemble les deux fichiers qu’il contient.
-3. Lancez **`Spark Model Editor.exe`** depuis ce dossier.
+
+4. Lancez **`Spark Model Editor.exe`** depuis ce dossier.
 
 Il faut un PC sous **Windows 10 ou 11 (64 bits)**. Rien d’autre à installer : le runtime .NET est inclus dans
 l’exécutable.
@@ -72,12 +81,16 @@ l’exécutable.
 1. **Ouvrir** : *Fichier > Ouvrir…* (`Ctrl+O`), puis choisissez le `models.bin`, ou faites un clic droit sur le
    fichier, *Ouvrir avec Spark Model Editor* (sous Windows 11, dans *Afficher plus d’options*). Travaillez de préférence
    sur une copie tirée de la backup : la copie `.bak` n’est faite qu’une fois.
+
 2. **Choisir un élément** dans l’arbre : un modèle (par exemple `ocelot`), une de ses parties (`head`, `body`…) ou une
    de ses boîtes (`Box 1`…).
+
 3. **Modifier** les valeurs dans l’inspecteur : `Entrée` valide la saisie, les flèches et la molette avancent pas à
    pas.
+
 4. **Enregistrer** : `Ctrl+S`, ou *Enregistrer sous…* (`Ctrl+Maj+S`) pour écrire un autre fichier. Une fois le fichier
    enregistré, la ligne d’état n’affiche plus « Non enregistré ».
+
 5. **Sur la PS3** : remettez le fichier à la place de l’original dans le jeu.
 
 Conseils : notez les valeurs d’origine avant d’expérimenter, changez une valeur à la fois, et gardez à l’esprit que les
@@ -102,6 +115,7 @@ entiers.
   propose d’enregistrer le fichier, se ferme, installe la mise à jour, puis se relance. *Infos > Rechercher les mises
   à jour* lance la même vérification. Chaque version est **signée** : une version dont la signature est absente ou
   invalide est refusée.
+
 - **Présence Discord** : si Discord est ouvert, votre profil indique ce que fait l’application (parcourt ou modifie un
   modèle, partie choisie, nombre de modifications, enregistrement), jamais le nom de vos fichiers. Le bouton Discord, à
   gauche de la version, affiche ou masque l’activité.
@@ -136,8 +150,10 @@ Vous pouvez supprimer ces clés et ce dossier.
 ## Crédits
 
 - **Spark Model Editor** : © 2026 INF3C7ONxR7. Tous droits réservés.
+
 - **Format des modèles (models.bin)** : établi d’après l’étude de Model-Studio (PhoenixARC). La lecture, l’écriture et
   les images (icône, têtes des mobs) sont propres à Spark Model Editor.
+
 - **Logos Discord et GitHub** : tracés de [Simple Icons](https://simpleicons.org/) (CC0) ; ces logos sont des marques
   de leurs propriétaires.
 
